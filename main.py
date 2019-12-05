@@ -41,7 +41,8 @@ def login():
         else:
                 successMessage = "The email address or password is wrong!"
                 successClass = "alert alert-danger"
-                return render_template("form.html", active1=active, successMessage = successMessage, successClass = successClass)
+                user = None
+                return render_template("index.html", active0=active, successMessage = successMessage, successClass = successClass, user=user)
 
 
 @app.route("/form", methods=["GET"])
