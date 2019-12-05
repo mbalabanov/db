@@ -10,13 +10,13 @@
 <div class="row">
     <div class="col-sm">
         <p><a href="/form" class="btn btn-info">Register as a user</a></p>
-    </div>
-
-    <div class="col-sm">
         <p><a href="/admin" class="btn btn-info">User Management (for admins)</a></p>
     </div>
 
     <div class="col-sm">
+        <div class="alert alert-danger" role="alert">
+            ACHTUNG! Das Login funktioniert nicht zuverlässig!
+        </div>
         {% if user == None %}
             <h5>Please login:</h5>
             <form method="post" action="/">

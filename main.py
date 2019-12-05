@@ -26,10 +26,16 @@ def login():
         active = "active"
         email = request.form["email"]
         password = request.form["pwd"]
-
         check_em = db.query(User).filter_by(email=email).first()
 
-        if check_em.check_password(password):
+        if check_em is None:
+                successMessage = "The email address or password is wrong!"
+                successClass = "alert alert-danger"
+                user = None
+
+                return render_template("index.html", active0=active, successMessage = successMessage, successClass = successClass, user=user)
+
+        elif check_em.check_password(password):
                 successMessage = "You have successfully logged on!"
                 successClass = "alert alert-success"
                 name=check_em.name
