@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, make_response
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash
 from model import User, db
 
 db.create_all()
@@ -43,7 +43,6 @@ def login():
                 successClass = "alert alert-danger"
                 user = None
                 return render_template("index.html", active0=active, successMessage = successMessage, successClass = successClass, user=user)
-
 
 @app.route("/form", methods=["GET"])
 def form():
