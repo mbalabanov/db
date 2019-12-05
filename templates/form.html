@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <h4>Register As A New User</h4>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <div class="{{ successClass }}" role="alert">{{ successMessage }}</div>
+        <form method="post" action="/form">
+            <p>Username:<br><input type="text" name="name" placeholder="Please enter username" class="form-control"></p>
+            <p>Email Address:<br><input type="email" name="email" placeholder="Please enter email address" class="form-control"></p>
+            <p>Password:<br><input type="password" name="pwd"  placeholder="Please enter a password" class="form-control"></p>
+            <p><button type="submit" class="btn btn-primary">Register</button></p>
+        </form>
+    </div>
+    <div class="col-8">
+        &nbsp;
+    </div>
+</div>
+
+{% endblock content %}

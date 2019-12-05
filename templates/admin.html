@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <h4>Administration & User Administration</h4>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr><th>User Name</th><th>Email-Address</th><th>Password Hash</th></tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr><td>{{ user.name }}</td><td>{{ user.email }}</td><td>{{ user.password_hash }}</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

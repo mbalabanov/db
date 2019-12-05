@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <h2>Database Example</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm">
+        <p><a href="/form" class="btn btn-info">Register as a user</a></p>
+    </div>
+
+    <div class="col-sm">
+        <p><a href="/admin" class="btn btn-info">User Management (for admins)</a></p>
+    </div>
+
+    <div class="col-sm">
+        {% if user == None %}
+            <h5>Please login:</h5>
+            <form method="post" action="/">
+                <p></p><input type="email" name="email" placeholder="Your email address" class="form-control"></p>
+                <p><input type="password" name="pwd" placeholder="Enter your password" class="form-control"></p>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        {% else %}
+            <p>Hello {{user}}</p>
+            <p>This is your email address: {{emailAddress}}</p>
+        {% endif %}
+        <p>&nbsp;</p>
+        <div class="{{ successClass }}" role="alert">{{ successMessage }}</div>
+    </div>
+</div>
+
+{% endblock content %}
