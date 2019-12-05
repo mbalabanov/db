@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <h4>Logout</h4>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm">
+        <h1>You are logged out.</h1>
+    </div>
+    <div class="col-sm">
+        <p><a href="/" class="btn btn-info">Back to Home</a></p>
+        <p><a href="/form" class="btn btn-info">Register a new user</a></p>
+        <p><a href="/admin" class="btn btn-info">User Management (for admins)</a></p>
+    </div>
+</div>
+
+{% endblock content %}

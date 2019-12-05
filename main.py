@@ -90,6 +90,13 @@ def success():
 
                 return response
 
+@app.route("/logout")
+def logout():
+        delcookie = make_response(render_template("logout.html"))
+        delcookie.delete_cookie('email')
+
+        return delcookie
+
 @app.route("/admin")
 def admin():
         active = "active"
